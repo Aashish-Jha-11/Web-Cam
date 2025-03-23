@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: gilroy;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+.main {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.video-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(4, 6, 7);
+}
+.recording-container {
+  width: 5rem;
+  height: 12rem;
+  /* background-color: lightblue; */
+  position: absolute;
+  top: calc((100vh - 12rem) / 2);
+  right: 5rem;
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 2;
+}
+.recording-container > * {
+  width: 100%;
+  height: 5rem;
+  /* background-color: coral; */
+  border-radius: 50%;
+  border: 4px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.recording-container .record-video {
+  width: 3rem;
+  height: 3rem;
+  background-color: red;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.recording-container .record-photo {
+  width: 3rem;
+  height: 3rem;
+  background-color: aliceblue;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Animate buttons */
+
+.scale-record {
+  animation-name: scale-record;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+.scale-capture {
+  animation-name: scale-capture;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@keyframes scale-record {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+@keyframes scale-capture {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/* Timer */
+
+.timer-container {
+  position: absolute;
+  left: 3rem;
+  bottom: 4rem;
+  color: rgb(197, 221, 216);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+.timer {
+  display: none;
+}
+
+.filter-container {
+  width: 6rem;
+  height: 20rem;
+  position: absolute;
+  top: calc((100vh - 20rem) / 2);
+  left: 5rem;
+  background-color: rgb(172, 194, 177);
+  z-index: 2;
+}
+.filter {
+  height: 4.5rem;
+  /* background-image: url("https://picsum.photos/seed/picsum/200/300"); */
+  background-image: url("https://images.unsplash.com/3/jerry-adney.jpg?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-blend-mode: color-burn;
+  margin: 6px;
+  cursor: pointer;
+}
+
+.orange {
+  background-color: #ffa50052;
+  cursor: pointer;
+}
+.brown {
+  background-color: #a52a2a59;
+}
+.pink {
+  background-color: #ffc0cb57;
+}
+.transparent {
+  background-color: transparent;
+}
+
+.filter-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+}
+
+/* Gallery styling */
+
+.material-icons {
+  font-size: 3rem;
+  color: wheat;
+}
+
+.gallery {
+  position: absolute;
+  right: 5rem;
+  bottom: 5rem;
+  z-index: 2;
+}
+.gallery:hover {
+  cursor: pointer;
+}
